@@ -1,0 +1,78 @@
+# Project: battlearena
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = psp-g++.exe -D__DEBUG__
+CC   = psp-gcc.exe -D__DEBUG__
+WINDRES = windres.exe
+RES  = 
+OBJ  = wavefront.o ase.o battlearena.o cutscene.o duel.o gutools.o image.o main.o map.o md2fast.o options.o particle.o savejpeg.o sound.o terrain.o intrafont/intraFont.o intrafont/libccc.o $(RES)
+LINKOBJ  = wavefront.o ase.o battlearena.o cutscene.o duel.o gutools.o image.o main.o map.o md2fast.o options.o particle.o savejpeg.o sound.o terrain.o intrafont/intraFont.o intrafont/libccc.o $(RES)
+LIBS =  -L"C:/cygwin/usr/local/pspdev/lib" -L"C:/cygwin/usr/local/pspdev/psp/lib" -L"C:/cygwin/usr/local/pspdev/psp/sdk/lib" -L"C:/cygwin/usr/local/pspdev/lib" -L"C:/cygwin/usr/local/pspdev/psp/lib" -L"C:/cygwin/usr/local/pspdev/psp/sdk/lib" /usr/local/pspdev/psp/sdk/lib/prxexports.o -llua -llualib -lcurl -lpsprtc -lpspgum_vfpu -lpspvfpu -lpspgu -lpng -lz -lm -lmikmod -lmmio -lpspaudiolib -lpspaudio -lpsppower -lpsphttp -lpspopenpsid -ljpeg -lpspdebug -lpspdisplay -lpspge -lpspctrl -lpspsdk -lc -lpspnet -lpspnet_inet -lpspnet_apctl -lpspnet_resolver -lpsputility -lpspuser -lpspkernel  -g3 
+INCS =  -I"C:/cygwin/usr/local/pspdev/include"  -I"C:/cygwin/usr/local/pspdev/psp/include"  -I"C:/cygwin/usr/local/pspdev/psp/sdk/include"  -I"C:/cygwin/usr/local/pspdev/include"  -I"C:/cygwin/usr/local/pspdev/psp/include"  -I"C:/cygwin/usr/local/pspdev/psp/sdk/include" 
+CXXINCS =  -I"C:/MinGW/lib/gcc/mingw32/3.4.5/include"  -I"C:/MinGW/include/c++/3.4.5/backward"  -I"C:/MinGW/include/c++/3.4.5/mingw32"  -I"C:/MinGW/include/c++/3.4.5"  -I"C:/MinGW/include"  -I"C:/Dev-Cpp/include"  -I"C:/cygwin/usr/local/pspdev/include"  -I"C:/cygwin/usr/local/pspdev/psp/include"  -I"C:/cygwin/usr/local/pspdev/psp/sdk/include" 
+BIN  = battlearena.exe
+CXXFLAGS = $(CXXINCS) -Iintrafont   -g3
+CFLAGS = $(INCS) -Iintrafont   -g3
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before battlearena.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "battlearena.exe" $(LIBS)
+
+wavefront.o: wavefront.c
+	$(CPP) -c wavefront.c -o wavefront.o $(CXXFLAGS)
+
+ase.o: ase.c
+	$(CPP) -c ase.c -o ase.o $(CXXFLAGS)
+
+battlearena.o: battlearena.c
+	$(CPP) -c battlearena.c -o battlearena.o $(CXXFLAGS)
+
+cutscene.o: cutscene.c
+	$(CPP) -c cutscene.c -o cutscene.o $(CXXFLAGS)
+
+duel.o: duel.c
+	$(CPP) -c duel.c -o duel.o $(CXXFLAGS)
+
+gutools.o: gutools.c
+	$(CPP) -c gutools.c -o gutools.o $(CXXFLAGS)
+
+image.o: image.c
+	$(CPP) -c image.c -o image.o $(CXXFLAGS)
+
+main.o: main.c
+	$(CPP) -c main.c -o main.o $(CXXFLAGS)
+
+map.o: map.c
+	$(CPP) -c map.c -o map.o $(CXXFLAGS)
+
+md2fast.o: md2fast.c
+	$(CPP) -c md2fast.c -o md2fast.o $(CXXFLAGS)
+
+options.o: options.c
+	$(CPP) -c options.c -o options.o $(CXXFLAGS)
+
+particle.o: particle.c
+	$(CPP) -c particle.c -o particle.o $(CXXFLAGS)
+
+savejpeg.o: savejpeg.c
+	$(CPP) -c savejpeg.c -o savejpeg.o $(CXXFLAGS)
+
+sound.o: sound.c
+	$(CPP) -c sound.c -o sound.o $(CXXFLAGS)
+
+terrain.o: terrain.c
+	$(CPP) -c terrain.c -o terrain.o $(CXXFLAGS)
+
+intrafont/intraFont.o: intrafont/intraFont.c
+	$(CPP) -c intrafont/intraFont.c -o intrafont/intraFont.o $(CXXFLAGS)
+
+intrafont/libccc.o: intrafont/libccc.c
+	$(CPP) -c intrafont/libccc.c -o intrafont/libccc.o $(CXXFLAGS)
